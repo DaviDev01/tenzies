@@ -91,3 +91,7 @@ body {
     box-shadow: 2px 2px 0px 3px rgb(198, 247, 218);
     background-color: #59e391;
 }
+
+.DieNum {
+    width: 121%;
+}

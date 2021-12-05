@@ -8,7 +8,7 @@ export default function Die(props) {
             onClick={(e)=> props.hold(props.obj.id, e)}
             disabled={props.hasWon}
         >
-            <img src={`../imgs/dice${props.obj.value}.png`} className="DieNum" alt={`dice${props.obj.value}`} width="121%"/>
+            <img src={`../imgs/dice${props.obj.value}.png`} className="DieNum" alt={`dice${props.obj.value}`} />
         </button>
     )
 }
