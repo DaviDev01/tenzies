@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {box-sizing: border-box;}
+
+body {
+    background-color: #0B2434;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Karla', sans-serif;
+}
+
+.diceContainer {
+    background-color: #F5F5F5;
+    max-width: 800px;
+    height: 84vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.dice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 550px;
+}
+
+.Die {
+    background-color: #fff;
+    color: #2B283A;
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px 3px rgb(0 0 0 / 15%);
+    border: none;
+    font-family: 'Karla', sans-serif;
+    transition: all .2s ;
+}
+
+.Die:hover {
+    transform: scale(1.08)
+}
+
+.diceContainer--btn {
+    background-color: #5035FF;
+    border: none;
+    padding: 13px 45px;
+    box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 25px;
+    font-family: 'Karla', sans-serif;
+}
+
+.diceContainer--btn:active {
+    box-shadow: inset 2px 2px 5px 3px rgb(0 0 0 / 55%);
+}
+
+.diceContainer--title {
+    color: #2B283A;
+    font-size: 45px;
+    margin: 0;
+}
+
+.diceContainer--instructions {
+    font-family: 'Inter', sans-serif;
+    color: #4A4E74;
+    font-size: 20px;
+    max-width: 370px;
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+
+.greenShadow {
+    box-shadow: 2px 2px 0px 3px rgb(198, 247, 218);
+    background-color: #59e391;
 }
