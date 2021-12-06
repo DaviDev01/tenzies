@@ -14,6 +14,13 @@ body {
     font-family: 'Karla', sans-serif;
 }
 
+img { 
+    -webkit-user-drag: none; 
+    -khtml-user-drag: none; 
+    -moz-user-drag: none; 
+    -o-user-drag: none; 
+  }
+
 .diceContainer {
     background-color: #F5F5F5;
     max-width: 800px;
@@ -33,7 +40,6 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     max-width: 550px;
-    
     margin-top: 25px;
 }
 
@@ -95,7 +101,7 @@ body {
 }
 
 .DieNum {
-    width: 121%;
+    width: 120%;
 }
 
 .dicePlayer2 {
@@ -139,8 +145,8 @@ body {
     box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
     border-radius: 5px;
     margin-left: 5px;
-    padding: 13px 45px;
     max-width: 100px;
+    padding: 10px 40px;
 }
 
 .lockBtn:active {
@@ -159,7 +165,7 @@ body {
     border-radius: 5px;
     margin-left: 5px;
     max-width: 100px;
-    padding: 13px 45px;
+    padding: 10px 40px;
 }
 
 .lockBtnBlue:active {
@@ -174,4 +180,67 @@ background: linear-gradient(180deg, rgba(245,245,245,1) 94%, rgba(80,53,255,1) 1
 .player2Turn {
     background: rgb(245,245,245);
 background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 110%);
+}
+
+.outerContainer {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start;
+
+}
+
+.mode {
+    align-self: stretch;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    padding: 15px;
+}
+
+.menu-btn {
+    width: 100%;
+    font-size: 17px;
+    font-family: 'Karla', sans-serif;
+    color: #2B283A;
+    text-transform: uppercase;
+    font-weight: 700;
+    justify-self: center;
+    border: none;
+    text-align: left;
+    opacity: .9;
+}
+
+.mode--title {
+    font-size: 25px;
+    font-family: 'Karla', sans-serif;
+    color: #2B283A;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: left;
+}
+
+.mode-instructions {
+    font-family: 'karla', sans-serif;
+    color: #4A4E74;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 500;
+    padding: 0;
+    opacity: .9;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #F5F5F5;
+}
+
+.hide {
+    background-color: #0B2434;
 }
