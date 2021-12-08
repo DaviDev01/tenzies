@@ -24,7 +24,6 @@ img {
 .diceContainer {
     background-color: #F5F5F5;
     max-width: 800px;
-    height: fit-content;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -56,7 +55,7 @@ img {
     box-shadow: 2px 2px 0px 3px rgb(0 0 0 / 15%);
     border: none;
     font-family: 'Karla', sans-serif;
-    transition: all .2s ;
+    transition: all .2s;
     cursor: pointer;
 }
 
@@ -222,6 +221,13 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     opacity: .9;
     cursor: pointer;
     display: block;
+    transition: all .2s ;
+}
+
+.menu-btn:hover,
+.menu-btn:focus{
+    transform: scale(1.08);
+    opacity: 1;
 }
 
 .mode--title {

@@ -9,7 +9,7 @@ export default function App() {
     const [hasWon, setHasWon] = useState(false)
     const [isConfettiTime, setIsConfettiTime] = useState(false)
     const [twoPlayerMode, setTwoPlayerMode] = useState(false)
-    const [againstPC, setAgainstPC] = useState(false)
+    const [againstPC, setAgainstPC] = useState(true)
     const [player1Win, setPlayer1Win] = useState(false)
     const [player2Win, setPlayer2Win] = useState(false)
     const [playerPcWin, setPlayerPcWin] = useState(false)
@@ -37,16 +37,8 @@ export default function App() {
                                     isSelected: num === mostRepNum ? true : false
                             }
                         } )
-                        
-        //setDiceObjsPlayer2(PcObjArray)   
-        
-        //setMostRepNumFunc(mostRepNum)
         return PcObjArray              
     }
-
-    //function setMostRepNumFunc(numRe) {
-    //    setMostRepNum(numRe)
-    //}
 
     const diceElements = diceObjs.map( (obj) => {
 
@@ -100,11 +92,7 @@ export default function App() {
     
     function getOccurrence(array, value) {
         return array.filter((v) => (v === value)).length;
-    }
-
-    //run funciton 
-    //get 10 randNums and put it inside of an array then check to see wich num repeats itself the most put that in state
-    //map over the 10 nums and make an obj where if the num i'm in is = to the most repeated num then set isSelected to true. 
+    } 
 
     function getData() {
         let numOfDice = 10
@@ -144,8 +132,7 @@ export default function App() {
 
     function updatePCdice() {
         let  selectedEl = diceObjsPc.find(element => element.isSelected)
-
-        
+       
         const arrWithNewNum = diceObjsPc.map(obj => obj.isSelected ? obj : {...obj, value: getRandNum()})
 
         const arrWithSelectedNums = arrWithNewNum.map(obj => obj.value === selectedEl.value ? {...obj, isSelected: true} : obj)
@@ -174,21 +161,23 @@ export default function App() {
 
 
         if (isAllSame.length === diceObjs.length) {
-            setHasWon(true);
-            setIsConfettiTime(true);
-            setPlayer1Win(true)
-            setPlayer1Turn(true)
+            victory('player1')
         } else if (isAllSamePlayer2.length === diceObjsPlayer2.length) {
-            setHasWon(true);
-            setIsConfettiTime(true)
-            setPlayer2Win(true)
-            setPlayer1Turn(true)
+            victory('player2')
         } else if (isAllSamePc.length === diceObjsPc.length) {
-            setHasWon(true);
-            setIsConfettiTime(true)
-            setPlayerPcWin(true)
-            setPlayer1Turn(true)
+            victory('PC')
         }
+    }
+
+    function victory(winner) {
+        setHasWon(true);
+        setIsConfettiTime(true);
+        setPlayer1Turn(true)
+        winner === 'player1' ? 
+        setPlayer1Win(true) :
+        winner === 'player2' ?
+        setPlayer2Win(true) :
+        setPlayerPcWin(true)
     }
 
     function hold(id, e) {
@@ -216,10 +205,10 @@ export default function App() {
     return (
         <div className="outerContainer">
             <div className="mode">
-            <h3 className="mode--title">Game Mode</h3>
+                <h3 className="mode--title">
+                    Game Mode
+                </h3>
                 <div className="btns">
-                    
-
                     <span onClick={() => {
                         setTwoPlayerMode(false)
                         resetGame()
@@ -246,16 +235,20 @@ export default function App() {
                     >
                         Human vs Machine 
                     </span>
-
                 </div>
-                {(twoPlayerMode || againstPC) && <div className="sidebar-intro"><h3 className="sidebar--title">Tenzies</h3> <p className="diceContainer--instructions mode-instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p></div>}
+                {(twoPlayerMode || againstPC) && 
+                <div className="sidebar-intro">
+                    <h3 className="sidebar--title">Tenzies</h3> 
+                    <p className="diceContainer--instructions mode-instructions">
+                        Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+                    </p>
+                </div>}
             </div>
             <main className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
                 {isConfettiTime && <Confetti />} 
                 {twoPlayerMode || againstPC ? 
                     <div className="btns-container">
-                        {
-                        againstPC ? 
+                        {againstPC ? 
                         <div className="evil-robot">
                             <img src={`../imgs/evil-robot.png`} alt="evil-robot" width="39px"/>
                         </div> :
@@ -264,43 +257,50 @@ export default function App() {
                             className="lockBtn" 
                             onClick={() => lockClick("player2")}
                         >
-                            <img src={`../imgs/${!player1Turn ? 'unlock' : 'lock'}-white.png`} alt="lock" className="lock"/>
-                        </button> 
-                        }
+                            <img 
+                                src={`../imgs/${!player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                                alt="lock" 
+                                className="lock"
+                            />
+                        </button>}
                     </div> : 
                     <h1 className="diceContainer--title">
                         Tenzies
                     </h1>}
                 {twoPlayerMode || againstPC ?
-                    <div className="dicePlayer2">
+                    <div className="dicePlayer2 dice">
                         {againstPC ? diceElementsPc : diceElementsPlayer2}
                     </div> : 
-                <p className="diceContainer--instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>}
-
+                    <p className="diceContainer--instructions">
+                        Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+                    </p>}
                 <div className="dice">
                     {diceElements}
                 </div>
                 <div className="btns-container">
-                    {!twoPlayerMode && !againstPC && <button
+                    {!twoPlayerMode && !againstPC && 
+                    <button
                         className="diceContainer--btn" 
                         onClick={() => roll('player1')}
                     >
                         {hasWon ? 'Play Again' : 'Roll'}
                     </button>} 
-                    {
-                    twoPlayerMode || againstPC ? 
+                    {twoPlayerMode || againstPC ? 
                     <button 
                         disabled={!player1Turn}
                         className="lockBtnBlue"
                         onClick={() => lockClick("player1")}
                     >
-                        <img src={`../imgs/${hasWon ? 'refresh' : player1Turn ? 'unlock' : 'lock'}-white.png`} alt="lock" className="lock"/>
-                    </button> : null
-                    } 
+                        <img 
+                            src={`../imgs/${hasWon ? 'refresh' : player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                            alt="lock" 
+                            className="lock"
+                        />
+                    </button> : null} 
                 </div>
             </main>
-            <div className="mode hide">
-                
+            <div className=" hide mode">  
+            {/*Em breve*/}  
             </div>
         </div>
     )
