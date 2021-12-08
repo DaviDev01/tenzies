@@ -8,7 +8,7 @@ export default function Die(props) {
 
     if (!props.hasWon && (props.twoPlayerMode || props.againstPC) && !props.player1Turn) {
         styles = {width: "80px", height: "80px"} 
-    } else if (props.player1Win) {
+    } else if (props.player2Win || props.playerPcWin) {
         styles = {width: "80px", height: "80px"}
     }
 
