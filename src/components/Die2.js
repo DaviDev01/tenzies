@@ -2,8 +2,9 @@ import React, {useState, useEffect} from "react"
 
 export default function Die(props) {
     const [hideDice, setHideDice] = useState(false)
-    console.log(props.player1Win)
+
     useEffect( () => setHideDice(true), [] )
+    
     let styles
 
     if (!props.hasWon && (props.twoPlayerMode || props.againstPC) && !props.player1Turn) {
