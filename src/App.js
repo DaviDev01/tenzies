@@ -216,7 +216,9 @@ export default function App() {
     return (
         <div className="outerContainer">
             <div className="mode">
-            <h3 className="mode--title">Game Mode</h3>
+                <h3 className="header--title">
+                    Tenzies
+                </h3>
                 <div className="btns">
                     
 
@@ -248,7 +250,6 @@ export default function App() {
                     </span>
 
                 </div>
-                {(twoPlayerMode || againstPC) && <div className="sidebar-intro"><h3 className="sidebar--title">Tenzies</h3> <p className="diceContainer--instructions mode-instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p></div>}
             </div>
             <main className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
                 {isConfettiTime && <Confetti />} 
@@ -299,9 +300,9 @@ export default function App() {
                     } 
                 </div>
             </main>
-            <div className="mode hide">
+            {/* <div className="mode hide">
                 
-            </div>
+            </div> */}
         </div>
     )
 }

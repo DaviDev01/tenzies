@@ -7,10 +7,7 @@ html, body {
 
 body {
     background-color: #0B2434;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
     font-family: 'Karla', sans-serif;
 }
 
@@ -24,13 +21,16 @@ img {
 .diceContainer {
     background-color: #F5F5F5;
     max-width: 800px;
-    height: fit-content;
+    min-height: fit-content;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 25px;
+    margin-bottom: 100px;
+    align-self: center;
+    box-shadow: 2px 2px 8px 3px rgb(0 0 0 / 25%);
 }
 
 .dice {
@@ -47,12 +47,11 @@ img {
     background-color: #fff;
     color: #2B283A;
     font-size: 35px;
-    width: 70px;
-    height: 70px;
+    width: 12.8%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 2px 2px 0px 3px rgb(0 0 0 / 15%);
     border: none;
     font-family: 'Karla', sans-serif;
@@ -60,7 +59,8 @@ img {
     cursor: pointer;
 }
 
-.Die:hover {
+.Die:hover,
+.Die:focus {
     transform: scale(1.08)
 }
 
@@ -185,21 +185,23 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
 
 .outerContainer {
     display: flex;
-    gap: 60px;
-    justify-content: flex-start;
-
+    flex-direction: column;
+    gap: 42px;
+    width: 100%;
 }
 
 .mode {
     align-self: stretch;
     background-color: #F5F5F5;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 100%;
     padding: 15px;
+    box-shadow: 2px 2px 8px 4px rgb(0 0 0 / 15%);
+
 }
 .btns {
     display: flex;
@@ -207,11 +209,11 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     align-items: center;
     justify-content: space-around;
     gap: 20px;
-    background-color: #F5F5F5;
+    margin-bottom: 15px;
 }
 
 .menu-btn {
-    font-size: 17px;
+    font-size: 16px;
     font-family: 'Karla', sans-serif;
     color: #2B283A;
     text-transform: uppercase;
@@ -222,18 +224,16 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     opacity: .9;
     cursor: pointer;
     display: block;
+    box-shadow: 2px 2px 0px 3px rgb(0 0 0 / 15%);
+    padding: 0 4px 0 4px;
+    border-radius: 2px;
+    transition: all .2s ;
 }
 
-.mode--title {
-    font-size: 20px;
-    font-family: 'Karla', sans-serif;
-    color: #2B283A;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-align: center;
-    letter-spacing: 7px;
-    margin: 0 auto;
-    opacity: .95;
+.menu-btn:hover,
+.menu-btn:focus {
+    transform: scale(1.08);
+    opacity: 1;
 }
 
 .mode-instructions {
@@ -247,15 +247,37 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     margin: 0;
 }
 
-.hide {
-    background-color: #0B2434;
+.header--title {
+    color: #2B283A;
+    font-size: 35px;
+    margin: 0;
+    text-shadow: 2px 2px  0px rgb(0 0 0 / 25%);
 }
 
-.sidebar--title {
-    color: #2B283A;
-    font-family: 'Karla', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 0 0 5px 0;
-    opacity: .9;
+.hide {
+    background-color: #152630;
+    box-shadow: none;
+    height: 50px;
+} 
+
+@media (min-width: 400px) {
+    .Die {
+        border-radius: 6px;
+    }
+}
+
+@media (min-width: 500px) {
+    .Die {
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 700px) {
+    .mode {
+        flex-direction: row;
+    }
+    .btns {
+        flex-direction: row;
+        margin: 0;
+    }
 }
