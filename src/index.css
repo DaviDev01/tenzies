@@ -28,9 +28,9 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0 25px;
-    margin-bottom: 100px;
     align-self: center;
     box-shadow: 2px 2px 8px 3px rgb(0 0 0 / 25%);
+    margin: 50px 0;
 }
 
 .dice {
@@ -48,6 +48,7 @@ img {
     color: #2B283A;
     font-size: 35px;
     width: 12.8%;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -252,13 +253,39 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     font-size: 35px;
     margin: 0;
     text-shadow: 2px 2px  0px rgb(0 0 0 / 25%);
+} 
+
+a {
+    text-decoration: none;
 }
 
-.hide {
-    background-color: #152630;
-    box-shadow: none;
-    height: 50px;
-} 
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 0;
+}
+
+.social--ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 50px;
+}
+
+.social--li {
+    font-size: 30px;
+}
+
+.fab {
+    color: #5035FF
+}
+
+.social--ul .fab:hover,
+.social--ul .fab:hover {
+    color: #231770;
+}
 
 @media (min-width: 400px) {
     .Die {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState} from "react"
 import Die from "./components/Die"
 import Die2 from "./components/Die2"
 import Confetti from "react-confetti"
@@ -37,16 +37,8 @@ export default function App() {
                                     isSelected: num === mostRepNum ? true : false
                             }
                         } )
-                        
-        //setDiceObjsPlayer2(PcObjArray)   
-        
-        //setMostRepNumFunc(mostRepNum)
         return PcObjArray              
     }
-
-    //function setMostRepNumFunc(numRe) {
-    //    setMostRepNum(numRe)
-    //}
 
     const diceElements = diceObjs.map( (obj) => {
 
@@ -100,11 +92,7 @@ export default function App() {
     
     function getOccurrence(array, value) {
         return array.filter((v) => (v === value)).length;
-    }
-
-    //run funciton 
-    //get 10 randNums and put it inside of an array then check to see wich num repeats itself the most put that in state
-    //map over the 10 nums and make an obj where if the num i'm in is = to the most repeated num then set isSelected to true. 
+    } 
 
     function getData() {
         let numOfDice = 10
@@ -211,47 +199,55 @@ export default function App() {
         }
     }
 
-    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 3740)
+    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 4000)
 
     return (
         <div className="outerContainer">
-            <div className="mode">
+            <header className="mode">
                 <h3 className="header--title">
                     Tenzies
                 </h3>
-                <div className="btns">
+                <nav className="btns">
                     
 
-                    <span onClick={() => {
-                        setTwoPlayerMode(false)
-                        resetGame()
-                        setAgainstPC(false)
-                        setPlayer1Turn(true)}} 
-                        className="menu-btn"
-                    >
-                        One Player 
-                    </span>
-                    <span 
-                        onClick={() => {
-                        setTwoPlayerMode(true) 
-                        setAgainstPC(false)
-                        resetGame()}} 
-                        className="menu-btn"
-                    >
-                        Two Players 
-                    </span>
-                    <span 
-                        onClick={() => {
-                        setAgainstPC(true) 
-                        resetGame()}} 
-                        className="menu-btn"
-                    >
-                        Human vs Machine 
-                    </span>
+                    <a href="#main">
+                        <span onClick={() => {
+                            setTwoPlayerMode(false)
+                            resetGame()
+                            setAgainstPC(false)
+                            setPlayer1Turn(true)}}
+                            className="menu-btn"
+                        >
+                            One Player
+                        </span>
+                    </a>
+                    
+                    <a href="#main">
+                        <span 
+                            onClick={() => {
+                            setTwoPlayerMode(true) 
+                            setAgainstPC(false)
+                            resetGame()}} 
+                            className="menu-btn"
+                        >
+                            Two Players 
+                        </span>
+                    </a>
 
-                </div>
-            </div>
-            <main className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
+                    <a href="#main">
+                        <span 
+                            onClick={() => {
+                            setAgainstPC(true) 
+                            resetGame()}} 
+                            className="menu-btn"
+                        >
+                            Human vs Machine 
+                        </span>
+                    </a>
+
+                </nav>
+            </header>
+            <main id="main" className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
                 {isConfettiTime && <Confetti />} 
                 {twoPlayerMode || againstPC ? 
                     <div className="btns-container">
@@ -300,9 +296,15 @@ export default function App() {
                     } 
                 </div>
             </main>
-            {/* <div className="mode hide">
-                
-            </div> */}
+            <footer className="mode footer">
+                    <div className="footer--info">
+                        <ul className="social--ul">
+                            <li className="social--li"><a href="https://github.com/DaviDev01" rel="noreferrer" target="_blank"><i className="fab fa-github-square"></i></a></li>
+                            <li className="social--li"><a href="https://www.linkedin.com/in/davi-mendes-868b6b207/" rel="noreferrer" target="_blank"><i className="fab fa-linkedin"></i></a></li>
+                            <li className="social--li"><a href="https://twitter.com/DavidaviMendes" rel="noreferrer" target="_blank"><i className="fab fa-twitter-square"></i></a></li>
+                        </ul>
+                    </div>
+            </footer>
         </div>
     )
 }
