@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState} from "react"
 import Die from "./components/Die"
 import Die2 from "./components/Die2"
 import Confetti from "react-confetti"
@@ -200,51 +200,55 @@ export default function App() {
         }
     }
 
-    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 3740)
+    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 4000)
 
     return (
         <div className="outerContainer">
-            <div className="mode">
-                <h3 className="mode--title">
-                    Game Mode
+            <header className="mode">
+                <h3 className="header--title">
+                    Tenzies
                 </h3>
-                <div className="btns">
-                    <span onClick={() => {
-                        setTwoPlayerMode(false)
-                        resetGame()
-                        setAgainstPC(false)
-                        setPlayer1Turn(true)}} 
-                        className="menu-btn"
-                    >
-                        One Player 
-                    </span>
-                    <span 
-                        onClick={() => {
-                        setTwoPlayerMode(true) 
-                        setAgainstPC(false)
-                        resetGame()}} 
-                        className="menu-btn"
-                    >
-                        Two Players 
-                    </span>
-                    <span 
-                        onClick={() => {
-                        setAgainstPC(true) 
-                        resetGame()}} 
-                        className="menu-btn"
-                    >
-                        Human vs Machine 
-                    </span>
-                </div>
-                {(twoPlayerMode || againstPC) && 
-                <div className="sidebar-intro">
-                    <h3 className="sidebar--title">Tenzies</h3> 
-                    <p className="diceContainer--instructions mode-instructions">
-                        Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
-                    </p>
-                </div>}
-            </div>
-            <main className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
+                <nav className="btns">
+                    
+
+                    <a href="#main">
+                        <span onClick={() => {
+                            setTwoPlayerMode(false)
+                            resetGame()
+                            setAgainstPC(false)
+                            setPlayer1Turn(true)}}
+                            className="menu-btn"
+                        >
+                            One Player
+                        </span>
+                    </a>
+                    
+                    <a href="#main">
+                        <span 
+                            onClick={() => {
+                            setTwoPlayerMode(true) 
+                            setAgainstPC(false)
+                            resetGame()}} 
+                            className="menu-btn"
+                        >
+                            Two Players 
+                        </span>
+                    </a>
+
+                    <a href="#main">
+                        <span 
+                            onClick={() => {
+                            setAgainstPC(true) 
+                            resetGame()}} 
+                            className="menu-btn"
+                        >
+                            Human vs Machine 
+                        </span>
+                    </a>
+
+                </nav>
+            </header>
+            <main id="main" className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
                 {isConfettiTime && <Confetti />} 
                 {twoPlayerMode || againstPC ? 
                     <div className="btns-container">
@@ -299,9 +303,15 @@ export default function App() {
                     </button> : null} 
                 </div>
             </main>
-            <div className=" hide mode">  
-            {/*Em breve*/}  
-            </div>
+            <footer className="mode footer">
+                    <div className="footer--info">
+                        <ul className="social--ul">
+                            <li className="social--li"><a href="https://github.com/DaviDev01" rel="noreferrer" target="_blank"><i className="fab fa-github-square"></i></a></li>
+                            <li className="social--li"><a href="https://www.linkedin.com/in/davi-mendes-868b6b207/" rel="noreferrer" target="_blank"><i className="fab fa-linkedin"></i></a></li>
+                            <li className="social--li"><a href="https://twitter.com/DavidaviMendes" rel="noreferrer" target="_blank"><i className="fab fa-twitter-square"></i></a></li>
+                        </ul>
+                    </div>
+            </footer>
         </div>
     )
 }
