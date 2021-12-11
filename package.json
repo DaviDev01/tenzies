@@ -2,7 +2,7 @@
   "name": "tenzies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://davidev01.github.io/quizzical",
+  "homepage": "http://davidev01.github.io/tenzies",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^11.2.7",
