@@ -9,7 +9,7 @@ export default function App() {
     const [hasWon, setHasWon] = useState(false)
     const [isConfettiTime, setIsConfettiTime] = useState(false)
     const [twoPlayerMode, setTwoPlayerMode] = useState(false)
-    const [againstPC, setAgainstPC] = useState(false)
+    const [againstPC, setAgainstPC] = useState(true)
     const [player1Win, setPlayer1Win] = useState(false)
     const [player2Win, setPlayer2Win] = useState(false)
     const [playerPcWin, setPlayerPcWin] = useState(false)
@@ -132,8 +132,7 @@ export default function App() {
 
     function updatePCdice() {
         let  selectedEl = diceObjsPc.find(element => element.isSelected)
-
-        
+       
         const arrWithNewNum = diceObjsPc.map(obj => obj.isSelected ? obj : {...obj, value: getRandNum()})
 
         const arrWithSelectedNums = arrWithNewNum.map(obj => obj.value === selectedEl.value ? {...obj, isSelected: true} : obj)
@@ -162,21 +161,23 @@ export default function App() {
 
 
         if (isAllSame.length === diceObjs.length) {
-            setHasWon(true);
-            setIsConfettiTime(true);
-            setPlayer1Win(true)
-            setPlayer1Turn(true)
+            victory('player1')
         } else if (isAllSamePlayer2.length === diceObjsPlayer2.length) {
-            setHasWon(true);
-            setIsConfettiTime(true)
-            setPlayer2Win(true)
-            setPlayer1Turn(true)
+            victory('player2')
         } else if (isAllSamePc.length === diceObjsPc.length) {
-            setHasWon(true);
-            setIsConfettiTime(true)
-            setPlayerPcWin(true)
-            setPlayer1Turn(true)
+            victory('PC')
         }
+    }
+
+    function victory(winner) {
+        setHasWon(true);
+        setIsConfettiTime(true);
+        setPlayer1Turn(true)
+        winner === 'player1' ? 
+        setPlayer1Win(true) :
+        winner === 'player2' ?
+        setPlayer2Win(true) :
+        setPlayerPcWin(true)
     }
 
     function hold(id, e) {
@@ -251,8 +252,7 @@ export default function App() {
                 {isConfettiTime && <Confetti />} 
                 {twoPlayerMode || againstPC ? 
                     <div className="btns-container">
-                        {
-                        againstPC ? 
+                        {againstPC ? 
                         <div className="evil-robot">
                             <img src={`../imgs/evil-robot.png`} alt="evil-robot" width="39px"/>
                         </div> :
@@ -261,39 +261,46 @@ export default function App() {
                             className="lockBtn" 
                             onClick={() => lockClick("player2")}
                         >
-                            <img src={`../imgs/${!player1Turn ? 'unlock' : 'lock'}-white.png`} alt="lock" className="lock"/>
-                        </button> 
-                        }
+                            <img 
+                                src={`../imgs/${!player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                                alt="lock" 
+                                className="lock"
+                            />
+                        </button>}
                     </div> : 
                     <h1 className="diceContainer--title">
                         Tenzies
                     </h1>}
                 {twoPlayerMode || againstPC ?
-                    <div className="dicePlayer2">
+                    <div className="dicePlayer2 dice">
                         {againstPC ? diceElementsPc : diceElementsPlayer2}
                     </div> : 
-                <p className="diceContainer--instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>}
-
+                    <p className="diceContainer--instructions">
+                        Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+                    </p>}
                 <div className="dice">
                     {diceElements}
                 </div>
                 <div className="btns-container">
-                    {!twoPlayerMode && !againstPC && <button
+                    {!twoPlayerMode && !againstPC && 
+                    <button
                         className="diceContainer--btn" 
                         onClick={() => roll('player1')}
                     >
                         {hasWon ? 'Play Again' : 'Roll'}
                     </button>} 
-                    {
-                    twoPlayerMode || againstPC ? 
+                    {twoPlayerMode || againstPC ? 
                     <button 
                         disabled={!player1Turn}
                         className="lockBtnBlue"
                         onClick={() => lockClick("player1")}
                     >
-                        <img src={`../imgs/${hasWon ? 'refresh' : player1Turn ? 'unlock' : 'lock'}-white.png`} alt="lock" className="lock"/>
-                    </button> : null
-                    } 
+                        <img 
+                            src={`../imgs/${hasWon ? 'refresh' : player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                            alt="lock" 
+                            className="lock"
+                        />
+                    </button> : null} 
                 </div>
             </main>
             <footer className="mode footer">
