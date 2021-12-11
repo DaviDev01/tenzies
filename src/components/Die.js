@@ -16,7 +16,7 @@ export default function Die(props) {
             onClick={(e)=> props.hold(props.obj.id, e)}
             disabled={props.hasWon || props.player1Turn}
         >
-            <img src={`../imgs/dice${props.obj.value}.png`} className="DieNum" alt={`dice${props.obj.value}`} />
+            <img src={`imgs/dice${props.obj.value}.png`} className="DieNum" alt={`dice${props.obj.value}`} />
         </button>
     )
 }
