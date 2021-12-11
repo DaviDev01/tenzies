@@ -3,6 +3,10 @@ import Die from "./components/Die"
 import Die2 from "./components/Die2"
 import Confetti from "react-confetti"
 import {nanoid} from "nanoid"
+import lock from "./imgs/lock-white.png"
+import unlock from "./imgs/unlock-white.png"
+import refresh from "./imgs/refresh-white.png"
+import robot from "./imgs/evil-robot.png"
 
 export default function App() {
     const [player1Turn, setPlayer1Turn] = useState(true)
@@ -254,7 +258,7 @@ export default function App() {
                     <div className="btns-container">
                         {againstPC ? 
                         <div className="evil-robot">
-                            <img src={`../imgs/evil-robot.png`} alt="evil-robot" width="39px"/>
+                            <img src={robot} alt="evil-robot" width="39px"/>
                         </div> :
                         <button 
                             disabled={player1Turn}
@@ -262,7 +266,7 @@ export default function App() {
                             onClick={() => lockClick("player2")}
                         >
                             <img 
-                                src={`../imgs/${!player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                                src={!player1Turn ? unlock : lock} 
                                 alt="lock" 
                                 className="lock"
                             />
@@ -296,7 +300,7 @@ export default function App() {
                         onClick={() => lockClick("player1")}
                     >
                         <img 
-                            src={`../imgs/${hasWon ? 'refresh' : player1Turn ? 'unlock' : 'lock'}-white.png`} 
+                            src={hasWon ? refresh : player1Turn ? unlock : lock} 
                             alt="lock" 
                             className="lock"
                         />
