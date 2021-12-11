@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tenzies/static/css/main.c527b986.chunk.css",
+    "main.js": "/tenzies/static/js/main.05675c4a.chunk.js",
+    "main.js.map": "/tenzies/static/js/main.05675c4a.chunk.js.map",
+    "runtime-main.js": "/tenzies/static/js/runtime-main.2ec8f569.js",
+    "runtime-main.js.map": "/tenzies/static/js/runtime-main.2ec8f569.js.map",
+    "static/js/2.475f0823.chunk.js": "/tenzies/static/js/2.475f0823.chunk.js",
+    "static/js/2.475f0823.chunk.js.map": "/tenzies/static/js/2.475f0823.chunk.js.map",
+    "index.html": "/tenzies/index.html",
+    "static/css/main.c527b986.chunk.css.map": "/tenzies/static/css/main.c527b986.chunk.css.map",
+    "static/js/2.475f0823.chunk.js.LICENSE.txt": "/tenzies/static/js/2.475f0823.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ec8f569.js",
+    "static/js/2.475f0823.chunk.js",
+    "static/css/main.c527b986.chunk.css",
+    "static/js/main.05675c4a.chunk.js"
+  ]
+}
