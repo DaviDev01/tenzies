@@ -9,7 +9,7 @@ export default function App() {
     const [hasWon, setHasWon] = useState(false)
     const [isConfettiTime, setIsConfettiTime] = useState(false)
     const [twoPlayerMode, setTwoPlayerMode] = useState(false)
-    const [againstPC, setAgainstPC] = useState(true)
+    const [againstPC, setAgainstPC] = useState(false)
     const [player1Win, setPlayer1Win] = useState(false)
     const [player2Win, setPlayer2Win] = useState(false)
     const [playerPcWin, setPlayerPcWin] = useState(false)
