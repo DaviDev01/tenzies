@@ -23,7 +23,7 @@ export default function Die(props) {
         styles = {width: "14.6%"}
     } else if (props.player1Win) {
         styles = {width: "14.6%"}
-    }
+    } 
 
     return (
         <button 
