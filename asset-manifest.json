@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tenzies/static/css/main.e9f5e765.chunk.css",
+    "main.css": "/tenzies/static/css/main.523ac9e0.chunk.css",
     "main.js": "/tenzies/static/js/main.526534f9.chunk.js",
     "main.js.map": "/tenzies/static/js/main.526534f9.chunk.js.map",
     "runtime-main.js": "/tenzies/static/js/runtime-main.2ec8f569.js",
@@ -8,7 +8,7 @@
     "static/js/2.475f0823.chunk.js": "/tenzies/static/js/2.475f0823.chunk.js",
     "static/js/2.475f0823.chunk.js.map": "/tenzies/static/js/2.475f0823.chunk.js.map",
     "index.html": "/tenzies/index.html",
-    "static/css/main.e9f5e765.chunk.css.map": "/tenzies/static/css/main.e9f5e765.chunk.css.map",
+    "static/css/main.523ac9e0.chunk.css.map": "/tenzies/static/css/main.523ac9e0.chunk.css.map",
     "static/js/2.475f0823.chunk.js.LICENSE.txt": "/tenzies/static/js/2.475f0823.chunk.js.LICENSE.txt",
     "static/media/evil-robot.d41dc0d1.png": "/tenzies/static/media/evil-robot.d41dc0d1.png",
     "static/media/lock-white.7b600d62.png": "/tenzies/static/media/lock-white.7b600d62.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.2ec8f569.js",
     "static/js/2.475f0823.chunk.js",
-    "static/css/main.e9f5e765.chunk.css",
+    "static/css/main.523ac9e0.chunk.css",
     "static/js/main.526534f9.chunk.js"
   ]
 }
