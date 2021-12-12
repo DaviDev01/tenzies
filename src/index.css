@@ -7,7 +7,7 @@ html, body {
 
 body {
     background-color: #0B2434;
-    height: 100%;
+    min-height: 100%;
     font-family: 'Karla', sans-serif;
 }
 
@@ -264,6 +264,8 @@ a {
     align-items: center;
     height: 100px;
     margin: 0;
+    background-color: #F5F5F5;
+    margin-top: auto;
 }
 
 .social--ul {
@@ -305,5 +307,60 @@ a {
     .btns {
         flex-direction: row;
         margin: 0;
+    }
+}
+/*Ipad*/
+@media (min-width: 760px) and (min-height: 1000px) {
+    .diceContainer {
+        margin: 130px 0;
+    }
+}
+/*Ipad Pro*/
+@media (min-width: 1010px) and (min-height: 1360px), (min-height: 1010px) and (min-width: 1360px) {
+    .diceContainer {
+        height: 900px;
+        width: 800px;
+        margin: 200px 0;
+    }
+
+    .dice {
+        max-width: 100%;
+    }
+
+    .mode {
+        flex-direction: column;
+    }
+
+    .header--title {
+        font-size: 70px;
+    }
+
+    .social--li {
+        font-size: 50px;
+    }
+    .btns {
+        flex-direction: row;
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+
+    .menu-btn {
+        font-size: 30px;
+    }
+
+    .robot {
+        width: 100px;
+    }
+
+    .lock {
+        width: 200%;
+        margin: 0px 150px;
+    }
+
+    .lockBtn,
+    .lockBtnBlue {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

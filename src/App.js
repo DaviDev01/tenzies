@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react"
+import React, { useEffect, useState, useRef} from "react"
 import Die from "./components/Die"
 import Die2 from "./components/Die2"
 import Confetti from "react-confetti"
@@ -19,7 +19,15 @@ export default function App() {
     const [playerPcWin, setPlayerPcWin] = useState(false)
     const [diceObjs, setDiceObjs] = useState(getData())  
     const [diceObjsPlayer2, setDiceObjsPlayer2] = useState(getData())  
-    const [diceObjsPc, setDiceObjsPc] = useState(getPcData())  
+    const [diceObjsPc, setDiceObjsPc] = useState(getPcData())
+    const [height, setHeight] = useState(null)
+    const [width, setWidth] = useState(null)
+    const confettiRef = useRef(null)
+
+    useEffect( () => {
+        setHeight(confettiRef.current.clientHeight)
+        setWidth(confettiRef.current.clientWidth)
+    }, [] )
 
     function getPcData() {
         let arrayRand = []
@@ -204,10 +212,10 @@ export default function App() {
         }
     }
 
-    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 4000)
+    isConfettiTime && setTimeout(() => setIsConfettiTime(false), 5000)
 
     return (
-        <div className="outerContainer">
+        <div className="outerContainer" ref={confettiRef}>
             <header className="mode">
                 <h3 className="header--title">
                     Tenzies
@@ -253,12 +261,12 @@ export default function App() {
                 </nav>
             </header>
             <main id="main" className={`diceContainer ${player1Turn ? "player1Turn" : "player2Turn"}`}>
-                {isConfettiTime && <Confetti />} 
+                {isConfettiTime && <Confetti height={height} width={width}/>} 
                 {twoPlayerMode || againstPC ? 
                     <div className="btns-container">
                         {againstPC ? 
                         <div className="evil-robot">
-                            <img src={robot} alt="evil-robot" width="39px"/>
+                            <img className="robot" src={robot} alt="evil-robot" width="39px"/>
                         </div> :
                         <button 
                             disabled={player1Turn}
@@ -307,7 +315,7 @@ export default function App() {
                     </button> : null} 
                 </div>
             </main>
-            <footer className="mode footer">
+            <footer className="footer">
                     <div className="footer--info">
                         <ul className="social--ul">
                             <li className="social--li"><a href="https://github.com/DaviDev01" rel="noreferrer" target="_blank"><i className="fab fa-github-square"></i></a></li>
