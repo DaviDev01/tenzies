@@ -252,6 +252,7 @@ background: linear-gradient(360deg, rgba(245,245,245,1) 94%, rgba(255,60,53,1) 1
     font-size: 35px;
     margin: 0;
     text-shadow: 2px 2px  0px rgb(0 0 0 / 25%);
+    cursor: pointer;
 } 
 
 a {

@@ -27,7 +27,7 @@ export default function App() {
     useEffect( () => {
         setHeight(confettiRef.current.clientHeight)
         setWidth(confettiRef.current.clientWidth)
-    }, [] )
+    }, [twoPlayerMode, againstPC] )
 
     function getPcData() {
         let arrayRand = []
@@ -212,23 +212,27 @@ export default function App() {
         }
     }
 
+    function onePlayerMode() {
+        setTwoPlayerMode(false)
+        resetGame()
+        setAgainstPC(false)
+        setPlayer1Turn(true)}
+
     isConfettiTime && setTimeout(() => setIsConfettiTime(false), 5000)
 
     return (
         <div className="outerContainer" ref={confettiRef}>
             <header className="mode">
-                <h3 className="header--title">
+                <h3 className="header--title"
+                    onClick={onePlayerMode}    
+                >
                     Tenzies
                 </h3>
                 <nav className="btns">
                     
 
                     <a href="#main">
-                        <span onClick={() => {
-                            setTwoPlayerMode(false)
-                            resetGame()
-                            setAgainstPC(false)
-                            setPlayer1Turn(true)}}
+                        <span onClick={onePlayerMode}
                             className="menu-btn"
                         >
                             One Player
