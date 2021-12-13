@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Tenzies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Modo de um jogador (One Player Mode)
+   -Seu objetivo é segurar todos os dados com o mesmo valor até que todos sejam iguais.
+   -Clique no dado que deseja segurar.
+   -Clique em "Roll" para lançar os dados restantes.
+   -Quando todos os dados forem iguais, os confetes cairão.
 
-## Available Scripts
+* Modo de dois jogadores (Two Player Mode)
+   -Seu objetivo é segurar todos os dados com o mesmo valor antes do seu oponente.
+   -Clique no dado que deseja segurar.
+   -Clique no cadeado quando tiver escolhido os dados que deseja segurar. Quando você fizer isso, será a vez do seu oponente e ele fará o mesmo.
+   -Quando todos os dados selecionados em um dos conjuntos tiverem o mesmo valor, os confetes cairão.
+  
+* Humano vs Máquina (Human vs Machine)
+   -Seu objetivo é segurar todos os dados com o mesmo valor antes do 'robô'.
+   -Clique no cadeado quando tiver escolhido os dados que deseja segurar. Ao fazer isso, será a vez do robô e ele fará o mesmo se for possível.
+   -Quando todos os dados selecionados em um dos conjuntos tiverem o mesmo valor, os confetes cairão.
 
-In the project directory, you can run:
+=======================================================================================================
 
-### `npm start`
+# Tenzies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* One Player Mode
+  -Your objective is to hold all the dice with the same value until all of them are the same.
+  -Click on the die you want to hold.
+  -Click on "Roll" to roll the remaining dice.
+  -When all dice are the same confetti will fall.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Two Player Mode 
+  -Your objective is to hold all the dice with the same value before your opponent.
+  -Click on the die you want to hold.
+  -Click on the lock button when you've chosen which dice to hold. When you do so, it will be your opponent's turn and he'll do the same.
+  -When all the selected dice in one of the sets have the same value confetti will fall.
+  
+* Human vs Machine  
+  -Your objective is to hold all the dice with the same value before the 'robot'. 
+  -Click on the lock button when you've chosen which dice to hold. When you do so, it will be the robot's turn and it'll do the same if possible.
+  -When all the selected dice in one of the sets have the same value confetti will fall.
+  
+  
+  
+  
+  
