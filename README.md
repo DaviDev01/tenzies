@@ -2,8 +2,8 @@ PT:
 # Tenzies
 
 * Modo de um jogador (One Player Mode)
-   -Seu objetivo é segurar todos os dados com o mesmo valor até que todos sejam iguais.
-   -Clique no dado que deseja segurar.
+   -Seu objetivo é segurar todos os dados com o mesmo valor até que todos sejam iguais.  
+   -Clique no dado que deseja segurar.  
    -Clique em "Roll" para lançar os dados restantes.
    -Quando todos os dados forem iguais, os confetes cairão.
 
