@@ -93,6 +93,7 @@ export default function TwoPlayerMode(props) {
         setPlayer2Win(false)
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect( checkForWin, [diceObjs, diceObjsPlayer2] )
 
     function checkForWin() {

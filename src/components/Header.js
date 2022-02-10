@@ -6,13 +6,13 @@ function Header(props) {
     let location = useLocation()
 
     return (
-        <HeaderStyled /* className="mode" */>
+        <HeaderStyled>
             <Link to="/">
                 <HeaderTitle>
                     Tenzies
                 </HeaderTitle>
             </Link>
-            <Nav /* className="btns" */>
+            <Nav>
                 <UlStyled className="header--ul">
                     <Link to="/">
                         <NavLi pathName={"/"} location={location.pathname}>One Player</NavLi>
