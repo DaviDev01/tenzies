@@ -19,9 +19,9 @@ export default function Die(props) {
         dice6
     }
 
-    if (!props.hasWon && (props.twoPlayerMode || props.againstPC) && !props.player1Turn) {
+    if (!props.hasWon && !props.player1Turn) {
         styles = {width: "14.6%"}
-    } else if (props.player1Win) {
+    } else if (props.player1Win || !props.player1Turn) {
         styles = {width: "14.6%"}
     } 
 
