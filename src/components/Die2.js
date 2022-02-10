@@ -20,7 +20,7 @@ export default function Die(props) {
 
     if (!props.hasWon && (props.twoPlayerMode || props.againstPC) && !props.player1Turn) {
         styles = {width: "14.6%"} 
-    } else if (props.player2Win || props.playerPcWin) {
+    } else if (props.player2Win || props.playerPcWin || !props.player1Turn) {
         styles = {width: "14.6%"}
     }
 
