@@ -1,5 +1,6 @@
 PT:
 # Tenzies
+Link para o projeto no GitHub Pages: https://davidev01.github.io/tenzies/
 
 * Modo de um jogador (One Player Mode)
    - Seu objetivo é segurar todos os dados com o mesmo valor até que todos sejam iguais.  
@@ -22,6 +23,7 @@ PT:
 
 EN:
 # Tenzies
+GitHub Pages Link: https://davidev01.github.io/tenzies/
 
 * One Player Mode 
   - Your objective is to hold all the dice with the same value until all of them are the same.  
