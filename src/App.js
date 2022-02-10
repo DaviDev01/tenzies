@@ -9,10 +9,7 @@ import {OuterContainer} from './components/styled/styledComponents'
 
 export default function App() {
     const confettiRef = useRef(null)
-
-
-   
-
+    
     return (
         <OuterContainer ref={confettiRef}>
             <Header/>

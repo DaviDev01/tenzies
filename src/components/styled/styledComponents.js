@@ -57,7 +57,7 @@ padding: 10px 40px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin-bottom: 25px;
+margin-bottom: 0px;
 margin-top: 25px;
 
 &:active {
